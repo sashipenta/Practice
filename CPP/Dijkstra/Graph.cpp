@@ -33,36 +33,8 @@ public:
 
     void addEdge(int s, int t, int w)
     {
-        addEdge1(s,t,w);
-        addEdge1(t,s,w);
-    }
-
-    void addEdge1(int s, int t, int w)
-    {
-        int alreadyExist = 0;
-
-        if(list.find(s) != list.end())
-        {
-            int size = list[s].size();
-
-            for(int i = 0; i < size; i++)
-            {
-                if(list[s][i].first == t)
-                {
-                    alreadyExist = 1;
-
-                    if(list[s][i].second > w)
-                    {
-                        list[s][i].second = w;
-                    }
-                }
-            }
-        }
-
-        if(!alreadyExist)
-        {
-            list[s].push_back(make_pair(t,w));
-        }
+        list[s].push_back(make_pair(t,w));
+        list[t].push_back(make_pair(s,w));
     }
 
     void shortestPaths(int source)
