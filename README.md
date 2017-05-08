@@ -49,5 +49,44 @@ else {
     return it->second;
 }
 ```
+# C++ Stack
 
+```
+std::stack<int> first;
+first.pop();
+first.push(5);
+```
 
+# C++ sort/algorithm
+
+```
+class compare
+{
+public:
+    bool operator() (int a, int b)
+    {
+        return a > b;
+    }
+};
+
+main()
+{
+    vector<int> a = {1, 5, 3};
+    
+    sort(a.begin(), a.end(), compare());
+    sort(a.begin(), a.end(), [](int a, int b) { return a > b; });
+}
+```
+
+# C++ Parsing sentance to words
+
+```
+void parsePhrase(const string& sentence, vector<string>& tokens)
+{
+    istringstream iss(sentence);
+
+    copy(istream_iterator<string>(iss),
+         istream_iterator<string>(),
+         back_inserter(tokens));
+}
+```
