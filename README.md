@@ -1,3 +1,5 @@
+# Practice Samples for future reference. 
+
 # Java vs C++ : Code snippets
 
 # Java Allocation
